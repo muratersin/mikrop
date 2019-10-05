@@ -15,7 +15,7 @@ Mikrop contain common methods and packages for required every services.
 installing:
 
 ```bash
-  npm i https://github.com/orboo/microp
+  npm i mikrop
 ```
 
 running script must be in root directory of your projects:
