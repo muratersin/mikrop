@@ -4,7 +4,7 @@
 Mikrop is a rapid api development library based on restify.
 
 [![npm version](https://img.shields.io/npm/v/mikrop.svg?style=flat-square)](https://www.npmjs.com/package/mikrop)
-[![license](https://img.shields.io/hexpm/l/mikrop?style=flat-square)]
+![license](https://img.shields.io/hexpm/l/mikrop?style=flat-square)
 
 Mikrop contain common methods and packages for required every services.
 
