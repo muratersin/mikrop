@@ -1,6 +1,6 @@
 import restify, { Server } from 'restify';
 
-import { getAuditLogConf } from '../config';
+import config, { getAuditLogConf } from '../config';
 import mongo from '../database/mongo';
 import requestLogger from '../middleware/request-logger';
 import setDefaultQueryParams from '../middleware/set-default-query-param';
@@ -9,8 +9,10 @@ import routeCollector from './route-collector';
 
 import { IConfig } from '../types';
 
-export default function init(options: IConfig = {}) {
-  const serviceConfig: IConfig = mergeConfig(options);
+export default function init(options?: IConfig) {
+  const serviceConfig: IConfig = options
+    ? mergeConfig(options)
+    : config;
 
   checkRequiredEnvVars(serviceConfig);
 

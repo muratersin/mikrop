@@ -6,7 +6,7 @@ export interface IRequest extends Request {
 }
 
 export interface IConfig {
-  apiDir?: string;
+  apiDir: string;
   env?: string;
   requiredVariables?: string[];
   useRequestLogger?: boolean;

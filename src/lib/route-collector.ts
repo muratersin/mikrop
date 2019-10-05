@@ -4,9 +4,10 @@ import path from 'path';
 import { Server } from 'restify';
 
 import { verifyToken } from '../middleware/auth';
+import { IConfig } from '../types';
 import { Methods } from './constants';
 
-export default function router(server: Server, config) {
+export default function router(server: Server, config: IConfig) {
   const apiDir = config.apiDir;
 
   fs.readdirSync(apiDir).forEach((file) => {

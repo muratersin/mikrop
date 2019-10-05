@@ -1,4 +1,5 @@
-import config, { IConfig } from '../config';
+import config from '../config';
+import { IConfig } from '../types';
 
 export function mergeConfig(o: IConfig): IConfig {
   const c = { ...config, ...o };
