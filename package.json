@@ -16,7 +16,8 @@
     "Microservice",
     "Nodejs",
     "Restify",
-    "MongoDB"
+    "MongoDB",
+    "Api"
   ],
   "author": "Murat Ersin <mmuratersin@gmail.com> (https://github.com/muratersin)",
   "license": "Apache-2.0",
