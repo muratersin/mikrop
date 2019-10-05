@@ -3,11 +3,12 @@ import path from 'path';
 
 import { Server } from 'restify';
 
+import config from '../config';
 import { verifyToken } from '../middleware/auth';
 import { Methods } from './constants';
 
 export default function router(server: Server) {
-  const apiDir = `${process.cwd()}/api`;
+  const apiDir = config.apiDir;
 
   fs.readdirSync(apiDir).forEach((file) => {
     const dir = path.resolve(apiDir, file);

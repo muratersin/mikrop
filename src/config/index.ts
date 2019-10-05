@@ -8,6 +8,7 @@ import server from './server.conf';
 import throttle from './throttle.conf';
 
 export interface IConfig {
+  apiDir: string;
   env?: string;
   requiredVariables?: string[];
   useRequestLogger?: boolean;
@@ -22,6 +23,7 @@ export interface IConfig {
 }
 
 const config: IConfig = {
+  apiDir: `${process.cwd()}/api`,
   bodyParser,
   cpuUsageThrottle,
   dateParser: 60,
