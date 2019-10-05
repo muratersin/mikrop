@@ -1,7 +1,7 @@
 {
   "name": "mikrop",
   "version": "0.0.1",
-  "description": "",
+  "description": "Rapid microservice development library based on Restify.",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "scripts": {
