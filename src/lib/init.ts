@@ -1,7 +1,6 @@
 import restify, { Server } from 'restify';
 
 import { getAuditLogConf, IConfig } from '../config';
-
 import mongo from '../database/mongo';
 import requestLogger from '../middleware/request-logger';
 import setDefaultQueryParams from '../middleware/set-default-query-param';

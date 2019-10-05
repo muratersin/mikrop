@@ -2,7 +2,6 @@
 import dotenv from 'dotenv';
 
 import { IConfig } from '../config';
-
 import init from './init';
 import logger from './logger';
 

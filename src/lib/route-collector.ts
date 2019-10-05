@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
+
 import { Server } from 'restify';
+
 import { verifyToken } from '../middleware/auth';
 import { Methods } from './constants';
 

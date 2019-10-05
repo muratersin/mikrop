@@ -1,4 +1,5 @@
 import { ServerOptions } from 'restify';
+
 import log from '../lib/logger';
 
 const config: ServerOptions = {
