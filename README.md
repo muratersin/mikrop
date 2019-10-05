@@ -6,35 +6,70 @@ Mikrop is a rapid api development library based on restify.
 [![npm version](https://img.shields.io/npm/v/mikrop.svg?style=flat-square)](https://www.npmjs.com/package/mikrop)
 [![Build Status](https://travis-ci.org/muratersin/mikrop.svg?branch=master)](https://travis-ci.org/muratersin/mikrop)
 
-Mikrop contain common methods and packages for required every services.
+Mikrop contain common methods and packages for required every micro service.
 
 ## Usage
 
 installing:
 
 ```bash
-  npm i mikrop
+  npm i --save mikrop
 ```
 
-running script must be in root directory of your projects:
 
+## Configuration
 ```js
 const mikrop = require('mikrop');
 
-mikrop.run(); // mikrop listening at http://[::]:3000
+// default config
+const config = {
+  apiDir: `${process.cwd()}/api`,
+  requiredVariables: ['JWT_SECRET'],
+  useRequestLogger: true,
+  useAuditLogger: true,
+  useMongo: false,
+  dateParser: 60,
+  server: ServerOptions,
+  throttle: ThrottleOptions,
+  bodyParser: BodyParserOptions,
+  queryParser: QueryParserOptions,
+  cpuUsageThrottle: CpuUsageThrottleOptions,
+};
+
+mikrop.run(config); // mikrop listening at http://[::]:3000
 ```
 
-## Route And Handler Definition
+#### apiDir: string
+  Absolute path of where contain your api handlers and config files.
 
+#### requiredVariables: [string]
+Array of required env variable for working your service.
+
+####  useRequestLogger: boolean
+If you want to see request logs on terminal, it's must be true.
+
+####  useAuditLogger: boolean
+Detailed error log for monitoring.
+
+####  useMongo: boolean
+If it's true and you have a valid env called MONGO_URI, service connect to database when starting.
+
+## Route And Handler Definition
+Folder structure is most important thing for Mikrop. 
+
+Your folder structure must be as shown below:
 ```bash
-root
-  |-- api
+my-microservice
+  |-- api -> This folder path can change with configuration object.
     |--user
       |--index.js    -> Contain route handler methods.
       |--config.json -> Contain path and methods.
+  |-- lib
+  |-- index.js
+  ...etc
 ```
 
-index.js:
+iapi/user/ndex.js:
 
 ```js
 module.exports.getUser = (req, res, next) => {
@@ -48,7 +83,7 @@ module.exports.formValidation = (req, res, next) => {
 };
 ```
 
-config.json:
+api/user/config.json:
 
 ```json
 {
@@ -68,6 +103,13 @@ config.json:
     }
   }
 }
+```
+
+index.js:
+```js
+const mikrop = require('mikrop');
+
+mikrop.run(); // mikrop listening at http://[::]:3000
 ```
 
 mikrop wants some env variable for running.

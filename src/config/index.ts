@@ -1,5 +1,3 @@
-import { plugins, ServerOptions } from 'restify';
-
 import bodyParser from './body-parser.conf';
 import cpuUsageThrottle from './cpu-usage-throttle.conf';
 import getAuditLogConf from './get-audit-log.conf';
@@ -7,20 +5,7 @@ import queryParser from './query-parser.conf';
 import server from './server.conf';
 import throttle from './throttle.conf';
 
-export interface IConfig {
-  apiDir: string;
-  env?: string;
-  requiredVariables?: string[];
-  useRequestLogger?: boolean;
-  useAuditLogger?: boolean;
-  useMongo?: boolean;
-  dateParser?: number;
-  server?: ServerOptions;
-  throttle?: plugins.ThrottleOptions;
-  bodyParser?: plugins.BodyParserOptions;
-  queryParser?: plugins.QueryParserOptions;
-  cpuUsageThrottle?: plugins.CpuUsageThrottleOptions;
-}
+import { IConfig } from '../types';
 
 const config: IConfig = {
   apiDir: `${process.cwd()}/api`,
