@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "tsc && mocha"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -45,6 +45,7 @@
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "mocha": "^6.2.1",
-    "tslint": "^5.20.0"
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
   }
 }
