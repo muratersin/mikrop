@@ -1,0 +1,24 @@
+{
+  "name": "User api",
+  "description": "This will use user information.",
+  "routes": {
+    "/user": {
+      "get": {
+        "handlers": ["get"]
+      }
+    },
+    "/user/:id": {
+      "get": {
+        "handlers": ["findById", "get"]
+      },
+      "put": {
+        "handlers": ["findById", "update"]
+      }
+    },
+    "/user/:id/change-password": {
+      "post": {
+        "handlers": ["changePassword"]
+      }
+    }
+  }
+}

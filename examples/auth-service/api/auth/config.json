@@ -1,0 +1,18 @@
+{
+  "name": "Auth api",
+  "description": "This will use user login and register process.",
+  "routes": {
+    "/auth/login": {
+      "post": {
+        "public": true,
+        "handlers": ["loginFormValidation", "login"]
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "public": true,
+        "handlers": ["registerFormValidation", "register"]
+      }
+    }
+  }
+}
