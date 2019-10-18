@@ -1,5 +1,6 @@
 
 import dotenv from 'dotenv';
+import restifyErrors from 'restify-errors';
 
 import { IConfig } from '../types';
 import init from './init';
@@ -25,3 +26,5 @@ export default function run(options?: IConfig) {
 export function getServer(options?: IConfig) {
   return init(options);
 }
+
+export const errors = restifyErrors;
