@@ -2,7 +2,14 @@ import config from '../config';
 import { IConfig } from '../types';
 
 export function mergeConfig(o: IConfig): IConfig {
-  const c = { ...config, ...o };
+  const c = {
+    ...config,
+    ...o,
+    requiredVariables: [
+      ...(config.requiredVariables || []),
+      ...(o.requiredVariables || [])
+    ]
+  };
 
   if (o.bodyParser) {
     c.bodyParser = {
