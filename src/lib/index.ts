@@ -6,7 +6,7 @@ import { IConfig } from '../types';
 import init from './init';
 import logger from './logger';
 
-export default function run(options?: IConfig) {
+export function run(options?: IConfig) {
   const ENV = (process.env.NODE_ENV || 'development').trim();
 
   if (ENV !== 'production') {
