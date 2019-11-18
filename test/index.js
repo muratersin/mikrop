@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 process.env.NODE_ENV = 'test';
 process.env.NAME = 'Test';
-process.env.JWT_SECRET = 'SIMPLE_JWT_SECRET';
 
 
 const chai = require('chai');

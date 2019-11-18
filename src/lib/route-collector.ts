@@ -3,7 +3,6 @@ import path from 'path';
 
 import { Server } from 'restify';
 
-import { verifyToken } from '../middleware/auth';
 import { IConfig } from '../types';
 import { Methods } from './constants';
 
@@ -37,10 +36,6 @@ export default function router(server: Server, config: IConfig) {
 
             return handlers[c];
           });
-
-        if (!conf.routes[route][method].public) {
-          handlerChain.unshift(verifyToken);
-        }
 
         switch (method) {
           case Methods.GET:

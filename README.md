@@ -24,7 +24,7 @@ const mikrop = require('mikrop');
 // default config
 const config = {
   apiDir: `${process.cwd()}/api`,
-  requiredVariables: ['JWT_SECRET'],
+  requiredVariables: [],
   useRequestLogger: true,
   useAuditLogger: true,
   useMongo: false,

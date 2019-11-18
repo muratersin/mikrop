@@ -14,9 +14,7 @@ const config: IConfig = {
   dateParser: 60,
   env: (process.env.NODE_ENV || 'development').trim(),
   queryParser,
-  requiredVariables: [
-    'JWT_SECRET',
-  ],
+  requiredVariables: [],
   server,
   throttle,
   useAuditLogger: true,
