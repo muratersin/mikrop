@@ -119,10 +119,9 @@ mikrop wants some env variable for running.
   PORT=3000
   URL=localhost
   NODE_ENV=development
-  JWT_SECRET=YOUR_JWT_SECRET
 ```
 
-Only JWT_SECRET of these variables is required, if mikrop can't find JWT_SECRET in env vars, process throw an error for missing required env variable. You can add more required env variable for specific services.
+You can add more required env variable for specific services.
 
 Configuration:
 
@@ -131,8 +130,7 @@ const mikrop = require('mikrop');
 
 const options = {
   requiredVariables: [
-    'JWT_SECRET',
-    'MY_ANOTHER_REQUIRED_ENV_VARIABLE',
+    'MY_REQUIRED_ENV_VARIABLE',
   ],
 },
 
